@@ -41,7 +41,7 @@ pipeline {
       }
       steps {
         container('docker') {
-          sh "docker build -t ${env.TAG_DEV} ."
+          sh "docker build -t ${env.TAG_DEV} --network container:\$(docker ps | grep \$(hostname) | grep k8s_POD | cut -d\" \" -f1) ."
         }
       }
     }
