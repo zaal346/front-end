@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10-alpine3.9
 ENV NODE_ENV "production"
 ENV PORT 8080
 EXPOSE 8080
